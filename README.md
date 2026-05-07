@@ -6,11 +6,11 @@ This repository is used for tracking the results of [my](https://github.com/Woll
 
 ## Roadmap
 
-Current Progress: 7% ▓░░░░░░░░░░░░ (2/28)
+Current Progress: 11% █▒░░░░░░░░░░░ (3/28)
 
 - [x] Introduction to Automation QA
 - [x] Introduction VCS. Git Basics
-- [ ] Variables and data types. Conditional Structures
+- [x] Variables and data types. Conditional Structures
 - [ ] Loops. Arrays and Objects
 - [ ] Functions. Import/Export
 - [ ] Async in JavaScript. Error Handling and Debugging
