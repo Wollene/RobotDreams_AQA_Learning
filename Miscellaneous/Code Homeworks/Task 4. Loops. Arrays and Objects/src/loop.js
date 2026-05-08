@@ -1,4 +1,4 @@
-// Iterating from 0 to 9 and from 100 to 0 (with step equals 10) through 'for' loop.
+/* --------------- Iterating from 0 to 9 and from 100 to 0 using 'for' loop. --------------- */
 
 for (let i = 0; i <= 9; i++) {
     console.log(`[ITERATING THROUGH 'FOR' (0 to 9)] i = ${i}`);
@@ -8,7 +8,7 @@ for (let i = 100; i >= 0; i -= 10) {
     console.log(`[ITERATING THROUGH 'FOR' (100 to 0)] i = ${i}`);
 }
 
-// Iterating from 0 to 9 and from 100 to 0 (with step equals 10) through 'while' loop.
+/* --------------- Iterating from 0 to 9 and from 100 to 0 using 'while' loop. --------------- */
 
 let i = 0;
 
@@ -24,7 +24,7 @@ while (i >= 0) {
     i -= 10;
 }
 
-// Iterating from 0 to 9 and from 100 to 0 (with step equals 10) through 'do...while' loop.
+/* --------------- Iterating from 0 to 9 and from 100 to 0 using 'do...while' loop. --------------- */
 
 i = 0;
 
