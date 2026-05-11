@@ -1,22 +1,22 @@
 
 # TS AQA Automation Course
 
-This repository is used for tracking the results of [my](https://github.com/Wollene). learning journey in Automation QA testing using Typescript with Playwright, on [robot_dreams courses](https://robotdreams.cc/uk/course/1742-qa-automation-typescript). 
+This repository is used for tracking the results of [my](https://github.com/Wollene) learning journey in Automation QA testing using Typescript with Playwright, on [robot_dreams courses](https://robotdreams.cc/uk/course/1742-qa-automation-typescript). 
 
 
 ## Roadmap
 
-Current Progress: 14% █▓░░░░░░░░░░░ (4/28)
+Current Progress: 17% ██▒░░░░░░░░░░ (5/28)
 
 - [x] Introduction to Automation QA
 - [x] Introduction VCS. Git Basics
 - [x] Variables and Data Types. Conditional Structures
 - [x] Loops. Arrays and Objects
-- [ ] Functions. Import/Export
+- [x] Functions. Import/Export
 - [ ] Async in JavaScript. Error Handling and Debugging
 - [ ] Introduction to TypeScript. Data Types in TypeScript
 - [ ] Interfaces and Types. Classes
-- [ ] OOP in TypsSript. Principles. SOLID. DRY
+- [ ] OOP in TypeScript. Principles. SOLID. DRY
 - [ ] Test Frameworks. Writing Unit Tests
 - [ ] Mocking and Testing Isolated Components
 - [ ] API Testing Basics
