@@ -1,36 +1,28 @@
 function addEntitiesInArray(array, type) {
 
-    if (!Array.isArray(array)) return 'The value provided to the function is not an array.';
-    if (type !== 'strings' && type !== 'numbers') return 'An incorrect type was provided. Allowed values: \'strings\', \'numbers\'.';
-
+    if (!Array.isArray(array))
+        return 'The value provided to the function is not an array.';
+    if (type !== 'strings' && type !== 'numbers')
+        return 'An incorrect type was provided. Allowed values: \'strings\', \'numbers\'.';
     let sum;
 
     if (type === 'numbers') {
-
         sum = 0;
-
         for (let i = 0; i < array.length; i++) {
             if (typeof array[i] !== 'number') {
                 return `Array contains invalid characters! Character: '${array[i]}'.`;
             }
-
             sum += array[i];
         }
-
         return sum;
-
     } else {
-
         sum = '';
-
         for (let i = 0; i < array.length; i++) {
             if (typeof array[i] !== 'string') {
                 return `Array contains invalid characters! Character: '${array[i]}'.`;
             }
-
             sum += array[i];
         }
-
         return sum;
     }
 }
