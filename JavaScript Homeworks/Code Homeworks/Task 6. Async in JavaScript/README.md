@@ -1,40 +1,66 @@
+
 # Task 6. Async in JavaScript. Error Handling and Debugging
 
-#### Task Description:
+> Learn how JavaScript handles asynchronous operations using Promises, async/await, and try/catch error handling.
 
-1. Create a new JS project for the Task 6.
-2. Make the following tasks in separate files (```promises.js```, ```async-await.js```, ```try-catch.js```). 
+## Overview
 
-### Task 1. promises.js
+This task explores three approaches to asynchronous programming in JavaScript. Each file focuses on a different mechanism for handling async HTTP requests and processing their results. The final file also covers error recovery and custom error creation.
 
-#### Description
+---
 
-You are practicing JavaScript Promises and asynchronous requests.
+## Project Structure
 
-Your task is to create a function that sends an HTTP request using ```fetch()``` to a resource that returns JSON data.
+| File | Description |
+|------|-------------|
+| `src/promises.js` | Async HTTP request handled with `.then()` chains |
+| `src/async-await.js` | Same logic rewritten using `async`/`await` |
+| `src/try-catch.js` | Error handling with fallback requests and custom errors |
 
-Then, using a ```.then()``` chain, process the response and reuse the received JSON inside another function.
+---
 
-The goal of this exercise is to understand how asynchronous requests work with Promises and how ```.then()``` chains handle asynchronous data.
+## Task 1 — Promises (`promises.js`)
 
-### Task 2. async-await.js
+You are practicing JavaScript Promises and asynchronous HTTP requests.
 
-#### Description
+Your task is to create a function that sends an HTTP request using `fetch()` to a resource that returns JSON. Then use a `.then()` chain to process the response and pass the parsed JSON into another function.
 
-You are practicing asynchronous JavaScript using async and await.
+The goal of this exercise is to understand how asynchronous requests work with Promises and how `.then()` chains sequence async operations.
 
-Your task is to repeat the same logic from promises.js, but this time using the async/await approach instead of ```.then()``` chains.
+**Key concepts:** `Promise`, `fetch()`, `.then()`, `.json()`, chaining, callback-style async
 
-The goal of this exercise is to understand how async/await simplifies asynchronous code.
+---
 
-### Task 3. try-catch.js
+## Task 2 — Async/Await (`async-await.js`)
 
-#### Description
+You are practicing asynchronous JavaScript using `async` and `await`.
 
-You are practicing JavaScript error handling.
+Your task is to repeat the same logic from `promises.js` — fetching JSON data and passing it to another function — but rewritten using `async`/`await` instead of `.then()` chains.
 
-Your task is to create a request to a resource that does not exist. When the request fails, the program should automatically send another request to a valid resource.
+The goal of this exercise is to understand how `async`/`await` makes asynchronous code look and behave more like synchronous code, improving readability.
 
-If the second request also returns an invalid response, you should generate your own custom error.
+**Key concepts:** `async`, `await`, `fetch()`, sequential async flow
 
-The goal of this exercise is to understand how ```try...catch```, fallback logic, and custom errors work in JavaScript.
+---
+
+## Task 3 — Error Handling (`try-catch.js`)
+
+You are practicing JavaScript error handling with fallback logic.
+
+Your task is to send a request to a resource that does not exist. When the request fails, the program should automatically send a second request to a valid resource. If the second request also returns an invalid response, you should throw a custom error.
+
+The goal of this exercise is to understand how `try...catch` handles failures, how to implement fallback logic, and how to define and throw custom errors.
+
+**Key concepts:** `try`, `catch`, `throw`, custom `Error`, fallback logic, `Response.ok`
+
+---
+
+## Topics Covered
+
+- Asynchronous JavaScript fundamentals
+- `Promise` API and `.then()` / `.catch()` chaining
+- `async` / `await` syntax
+- `fetch()` for HTTP requests
+- `try...catch` for error handling
+- Fallback request logic
+- Custom error creation with `throw new Error()`

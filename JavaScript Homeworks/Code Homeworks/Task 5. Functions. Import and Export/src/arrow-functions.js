@@ -8,6 +8,6 @@ const numbersArray = [4, 8, 15, 16, 23, 42];
 const stringsArray = ['Hello', 'Hey', 'Hola'];
 const mixedArray = ['Hello', 1, 2, 3];
 
-console.log(`Numbers Array: => ${addEntitiesInArray(numbersArray, 'numbers')}
-Strings Array: => ${addEntitiesInArray(stringsArray, 'strings')}
-Mixed Array: => ${addEntitiesInArray(mixedArray, 'strings')}`);
+console.log(`Numbers Array: => ${addEntitiesInArray(numbersArray)}
+Strings Array: => ${addEntitiesInArray(stringsArray)}
+Mixed Array: => ${addEntitiesInArray(mixedArray)}`);
