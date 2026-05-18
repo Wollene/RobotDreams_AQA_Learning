@@ -1,49 +1,40 @@
-# Task 3. Variables and Data Types
+# Task 6. Async in JavaScript. Error Handling and Debugging
 
 #### Task Description:
 
-1. Create a new JS project for the Task 4.
-2. Make the following tasks in separate files (```functions.js```, ```arrow-functions.js```, ```getter-setters.js```). 
+1. Create a new JS project for the Task 6.
+2. Make the following tasks in separate files (```promises.js```, ```async-await.js```, ```try-catch.js```). 
 
-### Task 1. functions.js
-
-#### Description
-
-You are practicing basic JavaScript functions.
-
-Your task is to create a regular function that accepts an array, adds all elements inside that array, and returns the result.
-
-After that, you need to create two arrays:
-- one array of strings
-- one array of numbers
-
-Then pass both arrays as arguments to the function and print the result to the console.
-
-The goal of this exercise is to understand how functions receive arguments, process data, and return results.
-
-### Task 2. arrow-functions.js
+### Task 1. promises.js
 
 #### Description
 
-You are practicing arrow functions in JavaScript.
+You are practicing JavaScript Promises and asynchronous requests.
 
-Your task is to repeat the same logic from functions.js, but this time using an arrow function instead of a regular function.
+Your task is to create a function that sends an HTTP request using ```fetch()``` to a resource that returns JSON data.
 
-The goal of this exercise is to understand the difference between function declarations and arrow function syntax.
+Then, using a ```.then()``` chain, process the response and reuse the received JSON inside another function.
 
-Inside the file, create an arrow function that:
-- accepts one array as a parameter
-- adds all elements of the array
-- returns the result
+The goal of this exercise is to understand how asynchronous requests work with Promises and how ```.then()``` chains handle asynchronous data.
 
-### Task 3. arrow-functions.js
+### Task 2. async-await.js
 
 #### Description
 
-You are practicing JavaScript objects, getters, and setters.
+You are practicing asynchronous JavaScript using async and await.
 
-Your task is to create an object with at least two levels of nesting. The object should contain both getters and setters.
+Your task is to repeat the same logic from promises.js, but this time using the async/await approach instead of ```.then()``` chains.
 
-You may also add an object method that manipulates object fields and returns or prints the processed result.
+The goal of this exercise is to understand how async/await simplifies asynchronous code.
 
-The goal of this exercise is to understand how getters and setters can control access to object properties.
+### Task 3. try-catch.js
+
+#### Description
+
+You are practicing JavaScript error handling.
+
+Your task is to create a request to a resource that does not exist. When the request fails, the program should automatically send another request to a valid resource.
+
+If the second request also returns an invalid response, you should generate your own custom error.
+
+The goal of this exercise is to understand how ```try...catch```, fallback logic, and custom errors work in JavaScript.

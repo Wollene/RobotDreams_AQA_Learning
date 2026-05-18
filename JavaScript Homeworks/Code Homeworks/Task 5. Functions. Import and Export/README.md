@@ -1,8 +1,8 @@
-# Task 3. Variables and Data Types
+# Task 5. Functions. Import/Export
 
 #### Task Description:
 
-1. Create a new JS project for the Task 4.
+1. Create a new JS project for the Task 5.
 2. Make the following tasks in separate files (```functions.js```, ```arrow-functions.js```, ```getter-setters.js```). 
 
 ### Task 1. functions.js
