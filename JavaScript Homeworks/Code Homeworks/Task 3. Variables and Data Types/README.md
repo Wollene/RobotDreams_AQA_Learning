@@ -1,47 +1,81 @@
 
 # Task 3. Variables and Data Types
 
-#### Task Description:
+> Explore JavaScript's type system through arithmetic operations, comparison operators, conditional structures, and control flow.
 
-1. Initialize the JavaScript project according to the [following guide](https://coda.io/d/_d3DDrmEyeIe/JS_su7Ia38Z).
-2. Make the following tasks in separate files (```arifmetics.js```, ```logical.js```, ```decision-tree.js```, ```switch.js```). 
+## Overview
 
-### Task 1. arifmetics.js
+This task covers the fundamentals of JavaScript variables and data types. Each file focuses on a distinct area — from how JavaScript handles mixed-type arithmetic, to making decisions with `if/else` and `switch`.
 
-#### Description
+The project is initialized following the [JavaScript project setup guide](https://coda.io/d/_d3DDrmEyeIe/JS_su7Ia38Z).
 
-Imagine you are writing a simple user access verification system. The system should decide what to do with a user depending on their age, status, balance, or role.
+---
 
-Your task is to use if, else if, and else to create branching decision logic.
+## Project Structure
 
-The goal of this exercise is to learn how to build simple decision trees in JavaScript.
+| File | Description |
+|------|-------------|
+| `src/arifmetics.js` | Arithmetic and type coercion with different data types |
+| `src/logical.js` | Comparison operators and logical expressions |
+| `src/decision-tree.js` | Conditional branching with `if`, `else if`, and `else` |
+| `src/switch.js` | Control flow with `switch`, `case`, `break`, and `default` |
 
-### Task 2. logical.js
+---
 
-#### Description
+## Task 1 — Arithmetic and Type Coercion (`arifmetics.js`)
 
-In JavaScript, different data types can behave unexpectedly when compared. This is especially noticeable when using ```==``` and ```===```.
+You are exploring how JavaScript handles arithmetic operations across different data types.
 
-Your task is to create variables of different types and check how comparison operators and logical operators work.
+Your task is to create variables of several types — numbers, strings, booleans, `null`, and `undefined` — and observe what happens when you perform operations between them.
 
-The goal of this exercise is to learn the difference between loose equality and strict equality, and to practice using ```&&```, ```||```, and ```!```.
+The goal of this exercise is to understand JavaScript's implicit type coercion and why mixing types can produce unexpected results like `NaN` or string concatenation instead of addition.
 
-### Task 3. decision-tree.js
+**Key concepts:** `const`, type coercion, `NaN`, template literals, `typeof`
 
-#### Description
+---
 
-Imagine you are writing a simple user access verification system. The system should decide what to do with a user depending on their age, status, balance, or role.
+## Task 2 — Logical and Comparison Operators (`logical.js`)
 
-Your task is to use ```if```, ```else if```, and ```else``` to create branching decision logic.
+You are exploring how JavaScript compares values of different types.
 
-The goal of this exercise is to learn how to build simple decision trees in JavaScript.
+Your task is to create variables of different types and test how `==` and `===` behave, along with logical operators `&&`, `||`, and `!`.
 
-### Task 4. logical.js
+The goal of this exercise is to understand the difference between loose equality (type coercion) and strict equality (no coercion), and to practice building logical expressions.
 
-#### Description
+**Key concepts:** `==`, `===`, `&&`, `||`, `!`, truthy/falsy values
+
+---
+
+## Task 3 — Decision Tree (`decision-tree.js`)
+
+You are writing a simple user access verification system.
+
+The system should decide what action to take based on a user's age, status, balance, or role. Your task is to use `if`, `else if`, and `else` to create branching decision logic.
+
+The goal of this exercise is to learn how to build readable decision trees in JavaScript.
+
+**Key concepts:** `if`, `else if`, `else`, conditions, nested branching
+
+---
+
+## Task 4 — Command Handler (`switch.js`)
 
 You are creating a simple command handler. A user can provide a command as a string, and the program should perform the corresponding action.
 
-Your task is to use the ```switch ... case``` structure to handle different command options.
+Your task is to use the `switch...case` structure to handle different command options and provide a fallback for unknown commands.
 
-The goal of this exercise is to learn how to use ```switch```, ```case```, ```break```, and ```default```.
+The goal of this exercise is to understand when to use `switch` over `if/else`, and how `break` and `default` control flow.
+
+**Key concepts:** `switch`, `case`, `break`, `default`
+
+---
+
+## Topics Covered
+
+- Variable declarations: `var`, `let`, `const`
+- Primitive types: `number`, `string`, `boolean`, `null`, `undefined`
+- Type coercion and `NaN`
+- Equality operators: `==` vs `===`
+- Logical operators: `&&`, `||`, `!`
+- Conditional structures: `if/else if/else`
+- Control flow: `switch/case`
