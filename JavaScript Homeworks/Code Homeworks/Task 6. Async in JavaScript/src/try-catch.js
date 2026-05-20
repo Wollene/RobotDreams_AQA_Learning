@@ -1,11 +1,7 @@
+import { fetchUsers } from './async-await.js';
+
 const mainUrl = 'https://hahdiajkjd.io/users';
 const backupUrl = 'https://jsonplaceholder.typicode.com/users';
-
-async function fetchUsers(url) {
-    const response = await fetch(url);
-    const usersArray = await response.text();
-    return Array(usersArray)[0];
-}
 
 try {
     console.log(`Fetching Users via Main URL: \n${await fetchUsers(mainUrl)}`);
