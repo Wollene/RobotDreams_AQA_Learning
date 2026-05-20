@@ -1,4 +1,4 @@
-# Task 3. Variables and Data Types
+# Task 4. Loops. Arrays and Objects
 
 #### Task Description:
 

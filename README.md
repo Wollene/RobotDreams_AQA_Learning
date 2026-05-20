@@ -6,14 +6,14 @@ This repository is used for tracking the results of [my](https://github.com/Woll
 
 ## Roadmap
 
-Current Progress: 17% ██▒░░░░░░░░░░ (5/28)
+Current Progress: 21% ██▓░░░░░░░░░░ (6/28)
 
 - [x] Introduction to Automation QA
 - [x] Introduction VCS. Git Basics
 - [x] Variables and Data Types. Conditional Structures
 - [x] Loops. Arrays and Objects
 - [x] Functions. Import/Export
-- [ ] Async in JavaScript. Error Handling and Debugging
+- [x] Async in JavaScript. Error Handling and Debugging
 - [ ] Introduction to TypeScript. Data Types in TypeScript
 - [ ] Interfaces and Types. Classes
 - [ ] OOP in TypeScript. Principles. SOLID. DRY
