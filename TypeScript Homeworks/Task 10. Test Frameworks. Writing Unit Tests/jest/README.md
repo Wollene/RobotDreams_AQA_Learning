@@ -1,60 +1,90 @@
 
-# Task 9. OOP in TypeScript. Principles. SOLID. DRY
+# Jest — Unit Tests for `addEntitiesInArray()`
 
-> Design a TypeScript class hierarchy that demonstrates OOP principles, adheres to SOLID and DRY, and shows practical use of encapsulation, inheritance, polymorphism, and abstraction.
+> Tests the generic `addEntitiesInArray()` utility from Task 7 using Jest and `ts-jest` with full ESM support.
 
-## Overview
+## Setup
 
-This task puts OOP theory into practice with TypeScript. You design a multi-class system where each class has a single clear responsibility, shared logic is extracted to avoid repetition, and behavior is composed through interfaces and abstract classes. The result demonstrates all four OOP pillars and at least the first two SOLID principles.
+```bash
+npm install
+```
+
+## Running Tests
+
+```bash
+# cross-platform (recommended)
+npm test
+
+# Windows only
+npm run debug:win
+
+# Linux / macOS only
+npm run debug:nix
+```
+
+> `NODE_OPTIONS=--experimental-vm-modules` is required because the project uses `"type": "module"` (ESM). The `npm test` script sets this automatically via `cross-env`.
 
 ---
 
 ## Project Structure
 
-| File | Description |
-|------|-------------|
-| `src/interfaces.ts` | Shared interfaces that define contracts across the hierarchy |
-| `src/abstract.ts` | Abstract base class with shared logic and abstract method signatures |
-| `src/classes.ts` | Concrete subclasses implementing the abstract base and interfaces |
-| `src/index.ts` | Entry point — instantiates classes and exercises polymorphic behavior |
+```
+jest/
+├── tests/
+│   └── addEntitiesInArray.spec.ts   — all test suites
+├── jest.config.ts                   — Jest configuration
+├── tsconfig.json
+└── package.json
+```
 
 ---
 
-## Task Description
+## Test Cases
 
-1. **Set up the TS project** with `tsconfig.json` and required dependencies.
+### Number arrays
 
-2. **Define interfaces** that describe the contracts for your domain objects.
+| Input | Expected output |
+|-------|----------------|
+| `[10, 15, 20]` | `45` |
+| `[4, 8, 15, 16, 23, 42]` | `108` |
+| `[-10, -11, -12]` | `-33` |
 
-3. **Create an abstract base class** that:
-   - Contains shared, reusable logic (DRY).
-   - Declares at least one abstract method that subclasses must implement.
-   - Uses access modifiers (`public`, `private`, `protected`) deliberately.
+### String arrays
 
-4. **Write at least two concrete subclasses** that:
-   - `extend` the abstract base class.
-   - `implement` one or more of the shared interfaces.
-   - Override/implement abstract methods with their own behavior (polymorphism).
+| Input | Expected output |
+|-------|----------------|
+| `['Hello', 'Hey', 'Hola']` | `'HelloHeyHola'` |
+| `['Hello', ',', ' ', 'World']` | `'Hello, World'` |
 
-5. **Apply SOLID principles**:
-   - **S** — each class has one responsibility.
-   - **O** — extend behavior via subclasses, not by modifying existing classes.
-   - **L** — subclasses can substitute the base class without breaking callers.
-   - **I** — interfaces are small and focused, not monolithic.
-   - **D** — high-level modules depend on abstractions, not concrete types.
+### Empty array error handling
 
-6. **Apply DRY** — extract any repeated logic into the base class or a utility, not duplicated across subclasses.
-
-7. **Create `index.ts`** — instantiate objects, call methods through the base-class/interface type, and log results that show polymorphic dispatch in action.
+| Input | Expected behavior |
+|-------|------------------|
+| `[]` (number array) | throws `'Array is empty!'` |
+| `[]` (string array) | throws `'Array is empty!'` |
 
 ---
 
-## Topics Covered
+## Configuration Notes
 
-- OOP pillars: encapsulation, inheritance, polymorphism, abstraction
-- Abstract classes and concrete subclasses with `extends`
-- Interface contracts with `implements`
-- Access modifiers: `public`, `private`, `protected`, `readonly`
-- SOLID principles applied in TypeScript
-- DRY — eliminating duplication through base-class logic
-- Type narrowing and polymorphic method calls
+Key settings in [jest.config.ts](jest.config.ts):
+
+| Option | Value | Why |
+|--------|-------|-----|
+| `preset` | `ts-jest/presets/default-esm` | Enables TypeScript + ESM in one preset |
+| `extensionsToTreatAsEsm` | `['.ts']` | Tells Jest to treat `.ts` files as ES modules |
+| `transform` | `ts-jest` with `useESM: true` | Transpiles TypeScript on the fly |
+| `verbose` | `true` | Prints each individual test name in the output |
+| `clearMocks` | `true` | Resets all mock state between tests |
+| `testMatch` | `**/tests/**/*.ts` | Picks up any `.spec.ts` / `.test.ts` inside `tests/` |
+
+---
+
+## Key APIs Used
+
+| API | Purpose |
+|-----|---------|
+| `describe()` | Groups related tests into a named suite |
+| `test()` | Defines a single test case |
+| `expect(...).toBe()` | Strict equality assertion |
+| `expect(...).toThrow()` | Asserts the function throws with a given message |

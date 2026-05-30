@@ -13,7 +13,7 @@
     "lib": ["DOM", "ES2020", "esnext"],
     "module": "ESNext",
     "noFallthroughCasesInSwitch": true,
-    "rootDir": "./",
+    "rootDir": "../..",
     "outDir": "./dist/out-tsc",
     "skipLibCheck": true,
     "sourceMap": true,

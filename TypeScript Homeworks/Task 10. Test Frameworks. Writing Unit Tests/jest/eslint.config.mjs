@@ -57,6 +57,7 @@ export default tsEslint.config({
             {
                 case: 'kebabCase',
                 ignore: [
+                    '^addEntitiesInArray\\.spec\\.ts$',
                     '^Vehicle\\.ts$',
                     '^BaseVehicle\\.ts$',
                     '^Car\\.ts$',

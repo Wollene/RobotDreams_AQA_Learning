@@ -1,6 +1,6 @@
 {
     "extension": ["ts"],
-    "require": ["tsx"],
+    "require": ["tsx", "./tests/globals.ts"],
     "spec": "tests/**/*.spec.ts",
     "timeout": 10000
 }

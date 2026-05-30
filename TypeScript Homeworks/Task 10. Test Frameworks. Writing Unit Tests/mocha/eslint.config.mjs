@@ -57,6 +57,7 @@ export default tsEslint.config({
             {
                 case: 'kebabCase',
                 ignore: [
+                    '^baseUserTest\\.spec\\.ts$',
                     '^Vehicle\\.ts$',
                     '^BaseVehicle\\.ts$',
                     '^Car\\.ts$',
