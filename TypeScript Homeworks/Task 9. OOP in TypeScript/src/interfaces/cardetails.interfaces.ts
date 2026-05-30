@@ -1,5 +1,5 @@
 export interface ICarDetails {
     model: string;
-    class: string;
+    vehicleClass: string;
     hasTrunk: boolean;
 }

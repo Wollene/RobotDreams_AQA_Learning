@@ -1,4 +1,4 @@
-import { IVehicle } from '../interfaces/vehicle.interfaces.js';
+import { IVehicle } from '../interfaces/vehicle.interfaces';
 
 export abstract class BaseVehicle implements IVehicle {
     public type: string;
@@ -10,10 +10,10 @@ export abstract class BaseVehicle implements IVehicle {
     protected _currentSpeed: number;
 
     public get isRunning(): boolean {
-        return this.isRunning;
+        return this._isRunning;
     }
     public get currentSpeed(): number {
-        return this.currentSpeed;
+        return this._currentSpeed;
     }
 
     public constructor(vehicle: IVehicle) {

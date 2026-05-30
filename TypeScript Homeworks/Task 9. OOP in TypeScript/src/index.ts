@@ -3,6 +3,7 @@ import { IMotorcycleDetails } from './interfaces/motorcycledetails.interfaces';
 import { IVehicle } from './interfaces/vehicle.interfaces';
 import { Car } from './classes/Car';
 import { Motorcycle } from './classes/Motorcycle';
+import { BaseVehicle } from './classes/BaseVehicle';
 
 const vehicleCar: IVehicle = {
     type: 'Sedan',
@@ -14,7 +15,7 @@ const vehicleCar: IVehicle = {
 
 const carDetails: ICarDetails = {
     model: 'BMW 3 Series',
-    class: 'C',
+    vehicleClass: 'C',
     hasTrunk: true
 };
 
@@ -35,7 +36,7 @@ const motorcycleDetails: IMotorcycleDetails = {
 const car = new Car(vehicleCar, carDetails);
 const motorcycle = new Motorcycle(vehicleMotorcycle, motorcycleDetails);
 
-function testVehicle(vehicle: Car | Motorcycle): void {
+function testVehicle(vehicle: BaseVehicle): void {
     console.log(`\n-==========- ${vehicle.type} TESTING -==========-
         \rEngine: ${vehicle.engine}
         \rFuel: ${vehicle.fuel}

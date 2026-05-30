@@ -6,6 +6,11 @@ export class Motorcycle extends BaseVehicle {
     public motorcycleType: string;
     public seats: number;
     public tires: string;
+    private behaviorByType: Map<string, () => void> = new Map<string, () => void>([
+        ['Chopper', () => console.log('Turning the chopper key...')],
+        ['Sport', () => console.log('Turning the PREMIUM key...')],
+        ['Dirt', () => console.log('Turning the dirt bike key...')]
+    ]);
 
     public constructor(vehicle: IVehicle, motorcycleDetails: IMotorcycleDetails) {
         super(vehicle);
@@ -16,19 +21,8 @@ export class Motorcycle extends BaseVehicle {
 
     public startEngine(): void {
         if (!this._isRunning) {
-            switch (this.motorcycleType) {
-                case 'Chopper':
-                    console.log('Turning the chopper key...')
-                    break;
-                case 'Sport':
-                    console.log('Turning the PREMIUM key...');
-                    break;
-                case 'Dirt':
-                    console.log('Pushing the dirt bike key...');
-                    break;
-                default:
-                    console.log('Turning the key...');
-            }
+            const start = this.behaviorByType.get(this.motorcycleType);
+            start();
             this._isRunning = true;
         } else {
             console.log('The engine is already running.');
