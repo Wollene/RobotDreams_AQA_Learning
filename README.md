@@ -9,10 +9,10 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 
 ## Progress
 
-**Current:** 28% — 8 of 28 lessons completed
+**Current:** 32% — 9 of 28 lessons completed
 
 ```
-███▒░░░░░░░░░  7/28
+████░░░░░░░░░  9/28
 ```
 
 | # | Topic | Status |
@@ -25,7 +25,7 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 | 6 | Async in JavaScript. Error Handling and Debugging | ✅ Done |
 | 7 | Introduction to TypeScript. Data Types in TypeScript | ✅ Done |
 | 8 | Interfaces and Types. Classes | ✅ Done |
-| 9 | OOP in TypeScript. Principles. SOLID. DRY | ⬜ Upcoming |
+| 9 | OOP in TypeScript. Principles. SOLID. DRY | ✅ Done |
 | 10 | Test Frameworks. Writing Unit Tests | ⬜ Upcoming |
 | 11 | Mocking and Testing Isolated Components | ⬜ Upcoming |
 | 12 | API Testing Basics | ⬜ Upcoming |
@@ -62,5 +62,6 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 │       └── Task 6. Async in JavaScript
 └── TypeScript Homeworks/
     ├── Task 7. Introduction to TypeScript
-    └── Task 8. Interfaces, Types and Classes
+    ├── Task 8. Interfaces, Types and Classes
+    └── Task 9. OOP in TypeScript
 ```
