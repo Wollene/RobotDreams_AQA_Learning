@@ -5,7 +5,7 @@ export const notAnArray = 1;
 const emptyNumberArray: number[] = [];
 const emptyStringArray: string[] = [];
 
-function addEntitiesInArray(array: string[] | number[]): string | number {
+export function addEntitiesInArray(array: string[] | number[]): string | number {
     if (array.length === 0) throw new Error('Array is empty!');
     let sum = typeof array[0] === 'number' ? 0 : '';
     for (const item of array) {
