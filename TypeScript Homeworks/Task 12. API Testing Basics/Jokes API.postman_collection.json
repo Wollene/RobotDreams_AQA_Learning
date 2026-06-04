@@ -1,0 +1,206 @@
+{
+  "info": {
+    "_postman_id": "daa3067d-86ae-420e-ad26-7d4dc331ecb8",
+    "name": "Jokes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17772314"
+  },
+  "item": [
+    {
+      "name": "Get Random Joke",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const respBody = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Request is successful. Status Code: 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"'Type' exists and is a string\", function () {\r",
+              "    pm.expect(respBody.type).to.exist;\r",
+              "    pm.expect(respBody.type).to.be.a('string');\r",
+              "});\r",
+              "\r",
+              "pm.test(\"'Setup' exists and is a string\", function () {\r",
+              "    pm.expect(respBody.setup).to.exist;\r",
+              "    pm.expect(respBody.setup).to.be.a('string');\r",
+              "});\r",
+              "\r",
+              "pm.test(\"'Punchline' exists and is a string\", function () {\r",
+              "    pm.expect(respBody.punchline).to.exist;\r",
+              "    pm.expect(respBody.punchline).to.be.a('string');\r",
+              "});\r",
+              "\r",
+              "pm.test(\"'id' exists and is a number\", function () {\r",
+              "    pm.expect(respBody.id).to.exist;\r",
+              "    pm.expect(respBody.id).to.be.a('number');\r",
+              "});\r",
+              "\r",
+              "pm.environment.set(\"jokeId\", respBody.id);"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/random_joke",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "random_joke"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Joke Types",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const respBody = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Request is successful. Status Code: 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response body exists and is an array\", function () {\r",
+              "    pm.expect(respBody).to.exist;\r",
+              "    pm.expect(respBody).to.be.an('array');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/types",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "types"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Joke By ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const respBody = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Request is successful. Status Code: 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response body contains the correct jokeId\", function () {\r",
+              "    pm.expect(respBody.id).to.be.equal(pm.environment.get(\"jokeId\"));\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/jokes/:jokeId",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "jokes",
+            ":jokeId"
+          ],
+          "variable": [
+            {
+              "key": "jokeId",
+              "value": "{{jokeId}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Random 10 Jokes",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const respBody = pm.response.json();\r",
+              "\r",
+              "pm.test(\"Request is successful. Status Code: 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response body exists and is an array\", function () {\r",
+              "    pm.expect(respBody).to.exist;\r",
+              "    pm.expect(respBody).to.be.an('array');\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Response body contains 10 joke objects\", function () {\r",
+              "    pm.expect(respBody.length).to.be.equal(10);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://official-joke-api.appspot.com/jokes/ten",
+          "protocol": "https",
+          "host": [
+            "official-joke-api",
+            "appspot",
+            "com"
+          ],
+          "path": [
+            "jokes",
+            "ten"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
