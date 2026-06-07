@@ -1,7 +1,7 @@
 import * as sinon from 'sinon';
 import { expect } from 'chai';
-import { User } from '../../src/classes/User';
-import { getUser } from '../../src/services/api.services';
+import { User } from '../../../Task 8. Interfaces, Types and Classes/src/classes/User';
+import { getUser } from '../../../Task 8. Interfaces, Types and Classes/src/services/api.services';
 
 const mockUser = {
     id: 1,
