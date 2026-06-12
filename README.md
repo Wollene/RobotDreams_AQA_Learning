@@ -9,10 +9,10 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 
 ## Progress
 
-**Current:** 39% — 11 of 28 lessons completed
+**Current:** 43% — 12 of 28 lessons completed
 
 ```
-█████░░░░░░░░  11/28
+█████▒░░░░░░░  12/28
 ```
 
 | # | Topic | Status |
@@ -27,7 +27,7 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 | 8 | Interfaces and Types. Classes | ✅ Done |
 | 9 | OOP in TypeScript. Principles. SOLID. DRY | ✅ Done |
 | 10 | Test Frameworks. Writing Unit Tests | ✅ Done |
-| 11 | Mocking and Testing Isolated Components | ⬜ Upcoming |
+| 11 | Mocking and Testing Isolated Components | ✅ Done |
 | 12 | API Testing Basics | ✅ Done |
 | 13 | Integration and Contract Testing | ⬜ Upcoming |
 | 14 | Workshop: Creating Your Own Framework for API Testing | ⬜ Upcoming |
@@ -65,5 +65,6 @@ This repository contains homework submissions for the [QA Automation: TypeScript
     ├── Task 8. Interfaces, Types and Classes
     ├── Task 9. OOP in TypeScript
     ├── Task 10. Test Frameworks. Writing Unit Tests
+    ├── Task 11. Mocking and Testing Isolated Components
     └── Task 12. API Testing Basics
 ```
