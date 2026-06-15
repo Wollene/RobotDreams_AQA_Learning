@@ -1,0 +1,38 @@
+{
+  "name": "task-13.-integration-and-contract-testing",
+  "version": "1.0.0",
+  "description": "> Tests `getUser()` and the `User` class in complete isolation — no real network calls — using Sinon stubs to replace `global.fetch` and Sinon spies to monitor method invocations.",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@pact-foundation/pact": "^16.5.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@stylistic/eslint-plugin-ts": "^4.4.1",
+    "@types/chai": "^5.2.3",
+    "@types/chai-things": "^0.0.38",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.9.3",
+    "chai": "^6.2.2",
+    "chai-things": "^0.2.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.5.0",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-unicorn": "^65.0.1",
+    "globals": "^17.6.0",
+    "mocha": "^11.7.6",
+    "prettier": "^3.8.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.0"
+  }
+}
