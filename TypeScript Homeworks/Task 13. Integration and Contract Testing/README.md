@@ -44,6 +44,14 @@ Task 13. Integration and Contract Testing/
 │   ├── e2e.spec.ts                 — full image/favourite/vote lifecycle
 │   ├── image-favourite.spec.ts     — image -> favourite flow
 │   └── image-vote.spec.ts          — image -> vote flow
+├── pact-tests/
+│   ├── client/
+│   │   ├── classes/
+│   │   │   └── PetStoreClient.ts       — HTTP client wrapper for the Petstore API
+│   │   └── interfaces/
+│   │       └── pet.interfaces.ts       — Pet, Tag, Category interface definitions
+│   └── consumer/
+│       └── post-pet.pact.spec.ts       — Pact V3 consumer contract test for POST /pet
 ├── globals.ts                      — loads API_KEY / BASE_URL from .env
 ├── openapi.yaml                    — OpenAPI 3.0 contract for The Cat API
 ├── .env.example                    — template for required environment variables
