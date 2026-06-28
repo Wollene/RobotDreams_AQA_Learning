@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 
 describe('End-to-End (Image, Favourite, Vote) Verification:', () => {
     let image_id: string;
+    let image_url: string;
     let vote_id: number;
     let favourite_id: number;
     const value = 10;
@@ -25,6 +26,7 @@ describe('End-to-End (Image, Favourite, Vote) Verification:', () => {
         expect(images.id).to.exist;
         expect(response.status).to.equal(201);
         image_id = images.id;
+        image_url = images.url;
     });
 
     it('Checking by Image ID -> GET /v1/images/:image_id', async () => {
@@ -73,7 +75,9 @@ describe('End-to-End (Image, Favourite, Vote) Verification:', () => {
         const favourites = await response.json();
 
         expect(favourites).is.an('object').and.not.to.be.empty;
-        expect(favourites.image_id).to.equal(image_id);
+        expect(favourites.image).to.exist.and.to.be.an('object');
+        expect(favourites.image.id).to.equal(image_id);
+        expect(favourites.image.url).to.equal(image_url);
         expect(response.status).to.equal(200);
     });
 
@@ -111,7 +115,9 @@ describe('End-to-End (Image, Favourite, Vote) Verification:', () => {
         const votes = await response.json();
 
         expect(votes).is.an('object').and.not.to.be.empty;
-        expect(votes.image_id).to.equal(image_id);
+        expect(votes.image).to.exist.and.to.be.an('object');
+        expect(votes.image.id).to.equal(image_id);
+        expect(votes.image.url).to.equal(image_url);
         expect(votes.value).to.equal(value);
         expect(response.status).to.equal(200);
     });

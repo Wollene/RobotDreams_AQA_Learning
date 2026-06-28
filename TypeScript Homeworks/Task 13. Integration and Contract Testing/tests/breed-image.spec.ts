@@ -1,7 +1,8 @@
 import { expect } from 'chai';
 import { API_KEY, BASE_URL } from '../globals';
+import { generateRandomString } from './helpers/data-generators';
 
-describe('Breed -> Image Verification:', () => {
+describe('Breed -> Image Positive Verification:', () => {
     let image_id: string;
     let breed_name: string;
 
@@ -36,5 +37,20 @@ describe('Breed -> Image Verification:', () => {
         expect(images.breeds).to.be.an('array').and.to.exist;
         expect(images.breeds.map((breed: {name: string}) => breed.name)).to.include(breed_name);
         expect(response.status).to.equal(200);
+    });
+});
+
+describe('Breed -> Image Negative Verification:', () => {
+    const image_id = generateRandomString();
+
+    it('Providing non-existing Image ID -> GET /v1/images/:image_id', async () => {
+        const response = await fetch(`${BASE_URL}/images/${image_id}`, {
+            method: 'GET',
+            headers: {
+                'x-api-key': `${API_KEY}`
+            }
+        });
+
+        expect(response.status).to.equal(400);
     });
 });

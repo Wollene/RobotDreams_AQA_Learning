@@ -32,9 +32,8 @@ const expected: Pet = {
     status: 'available'
 };
 
-describe('Pet Creation -> POST /pet:', () => {
-
-    it('Successful Pet Creation', async () => {
+describe('Pet -> Consumer Positive Verification:', () => {
+    it('Successful Pet Creation -> POST /pet', async () => {
         await provider
             .addInteraction({
                 states: [{ description: 'ready to create a pet' }],
@@ -46,19 +45,19 @@ describe('Pet Creation -> POST /pet:', () => {
                         'Content-Type': 'application/json'
                     },
                     body: {
+                        id: like(1),
+                        category: like({ id: like(1), name: like('cats')}),
                         name: like('Fluffy'),
-                        photoUrls: eachLike('https://example.com/images/fluffy.jpg')
+                        photoUrls: eachLike('https://example.com/images/fluffy.jpg'),
+                        tags: eachLike({ id: like(1), name: like('Favorites')}),
+                        status: like('available')
                     }
                 },
                 willRespondWith: {
                     status: 200,
                     body: {
-                        id: like(1),
-                        category: eachLike({ id: like(1), name: like('cats')}),
                         name: like('Fluffy'),
-                        photoUrls: eachLike('https://example.com/images/fluffy.jpg'),
-                        tags: eachLike({ id: like(1), name: like('Favorites')}),
-                        status: like('available')
+                        photoUrls: eachLike('https://example.com/images/fluffy.jpg')
                     }
                 }
             })
