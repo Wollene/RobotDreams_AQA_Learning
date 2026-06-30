@@ -26,7 +26,7 @@ This is a non-code task. The deliverable is a `.txt` file documenting a manual t
 | 3 | Type `"Dyson HD07"` | — | — |
 | 4 | Click the search submit button | `button[type="submit"]` | `//button[@type="submit"]` |
 | 5 | Wait for results page to render | — | — |
-| 6 | Find and click the first result matching `"Dyson HD07"`; capture its title | `a.tile-title` *(iterate array)* | `//a[@class='tile-title black-link text-base']` *(iterate array)* |
+| 6 | Find and click the first result matching `"Dyson HD07"`; capture its title | `a.tile-title` *(iterate array)* | `//a[contains(@class, 'tile-title')]` *(iterate array)* |
 | 7 | Wait for product page to render | — | — |
 | 8 | Assert page title matches the captured title from step 6 | `h1.title__font` | `//h1[@class="title__font"]` |
 | 9 | Click the "Buy" button | `span.buy-button__label` | `//span[text()=" Купити "]` |

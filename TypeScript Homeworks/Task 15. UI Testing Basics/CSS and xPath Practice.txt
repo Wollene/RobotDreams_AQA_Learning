@@ -27,7 +27,7 @@ xPath:
 3. Entering "Dyson HD07"
 4. Finding //button[@type="submit"] locator and performing a click on it
 5. Waiting for results page to render
-6. Finding //a[@class='tile-title black-link text-base'] array and iterating them, until we find title (and copy it), which would be having "Dyson HD07" and performing a click on it
+6. Finding //a[contains(@class, 'tile-title')] array and iterating them, until we find title (and copy it), which would be having "Dyson HD07" and performing a click on it
 7. Waiting for product page to render
 8. Finding //h1[@class="title__font"] locator and comparing it's title from Step 6 against the text from //h1[@class="title__font"]
 9. Finding //span[text()=" Купити "] locator and performing a click on it
