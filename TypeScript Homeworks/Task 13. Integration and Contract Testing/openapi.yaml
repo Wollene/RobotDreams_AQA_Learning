@@ -1,0 +1,508 @@
+openapi: 3.0.0
+info:
+  title: The Cat API
+  version: 1.0.0
+  description: API that gives you access to Cat images, and breeds.
+
+servers:
+  - url: https://api.thecatapi.com/v1
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-api-key
+  schemas:
+    Breed:
+      type: object
+      properties:
+        weight:
+          type: object
+          properties:
+            imperial:
+              type: string
+            metric:
+              type: string
+        id: 
+          type: string
+        name:
+          type: string
+        cfa_url:
+          type: string
+        vetstreet_url:
+          type: string
+        temperament:
+          type: string
+        origin:
+          type: string
+        country_codes:
+          type: string
+        country_code:
+          type: string
+        description:
+          type: string
+        life_span:
+          type: string
+        indoor:
+          type: integer
+          format: int32
+        lap:
+          type: integer
+          format: int32
+        alt_names:
+          type: string
+        adaptability:
+          type: integer
+          format: int32
+        affection_level:
+          type: integer
+          format: int32
+        child_friendly:
+          type: integer
+          format: int32
+        dog_friendly:
+          type: integer
+          format: int32
+        energy_level:
+          type: integer
+          format: int32
+        grooming:
+          type: integer
+          format: int32
+        health_issues:
+          type: integer
+          format: int32
+        intelligence:
+          type: integer
+          format: int32
+        shedding_level:
+          type: integer
+          format: int32
+        social_needs:
+          type: integer
+          format: int32
+        stranger_friendly:
+          type: integer
+          format: int32
+        vocalisation:
+          type: integer
+          format: int32
+        experimental:
+          type: integer
+          format: int32
+        hairless:
+          type: integer
+          format: int32
+        natural:
+          type: integer
+          format: int32
+        rare:
+          type: integer
+          format: int32
+        rex:
+          type: integer
+          format: int32
+        suppressed_tail:
+          type: integer
+          format: int32
+        short_legs:
+          type: integer
+          format: int32
+        wikipedia_url:
+          type: string
+        hypoallergenic:
+          type: integer
+          format: int32
+        reference_image_id:
+          type: string
+        image:
+          $ref: '#/components/schemas/Breed-Image'
+
+    Breed-Image:
+      type: object
+      properties:
+        id:
+          type: string
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        url:
+          type: string
+    
+    Image:
+      type: object
+      properties:
+        id: 
+          type: string
+        url:
+          type: string
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        mime_type:
+          type: string
+        breeds:
+          type: array
+          items:
+            $ref: '#/components/schemas/Image-Breed'
+        categories:
+          type: array
+        breed_ids:
+          type: string
+    
+    Image-Breed:
+      type: object
+      properties:
+        id: 
+          type: integer
+          format: int32
+        name:
+          type: string
+
+    Image-Create:
+      type: object
+      properties:
+        id:
+          type: string
+        url:
+          type: string
+        sub_id:
+          type: string
+        width:
+          type: integer
+          format: int32
+        height:
+          type: integer
+          format: int32
+        original_filename:
+          type: string
+        pending:
+          type: integer
+          format: int32
+        approved:
+          type: integer
+          format: int32
+
+    Vote:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        image_id:
+          type: string
+        sub_id:
+          type: string
+        created_at:
+          type: string
+        value:
+          type: integer
+          format: int32
+        country_code:
+          type: string
+        image:
+          $ref: '#/components/schemas/Image-Breed'
+
+    Post-Vote-Request:
+      type: object
+      required:
+        - image_id
+        - value
+      properties:
+        image_id:
+          type: string
+        sub_id:
+          type: string
+        value:
+          type: integer
+          format: int32
+    
+    Post-Vote-Response:
+      type: object
+      properties:
+        message:
+          type: string
+        id:
+          type: integer
+          format: int32
+        image_id:
+          type: string
+        sub_id:
+          type: string
+        value:
+          type: integer
+          format: int32
+        country_code:
+          type: string
+    
+    Favourite:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        user_id:
+          type: string
+        image_id:
+          type: string
+        sub_id:
+          type: string
+        created_at:
+          type: string
+        image:
+          $ref: '#/components/schemas/Image-Breed'
+
+    Post-Favourite-Request:
+      type: object
+      required:
+        - image_id
+        - sub_id
+      properties:
+        image_id:
+          type: string
+        sub_id:
+          type: string
+
+    Post-Favourite-Response:
+      type: object
+      properties:
+        message:
+          type: string
+        id:
+          type: integer
+          format: int32
+    
+security:
+ - ApiKeyAuth: []
+
+paths:
+  /images/{image_id}:
+    get:
+      summary: Get image by ID.
+      parameters: 
+        - name: image_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: sub_id
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        200:
+          description: An image returned by given ID.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+    delete:
+      summary: Delete image by ID.
+      parameters: 
+        - name: image_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful deletion.
+      
+  /images/search:
+    get:
+      summary: Search through images by certain conditions.
+      parameters:
+        - name: size
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: mime_types
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: format
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: has_breeds
+          in: query
+          required: false
+          schema:
+            type: boolean
+        - name: order
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: include_breeds
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+        - name: include_categories
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: A list of images.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Image'
+  
+  /images/upload:
+    post:
+      summary: Upload a new image.
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+                sub_id:
+                  type: string
+                breed_ids:
+                  type: string
+      responses:
+        201:
+          description: Successful upload.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image-Create'
+
+  /breeds:
+    get:
+      summary: Get a list of breeds.
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        200:
+          description: A list of breeds.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Breed'
+
+  /votes:
+    get:
+      summary: Get a vote list.
+      responses:
+        200:
+          description: A list of votes.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vote'
+    post:
+      summary: Post a vote.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post-Vote-Request'
+      responses:
+        201:
+          description: Successful vote posting.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post-Vote-Response'
+  
+  /votes/{vote_id}:
+    delete:
+      summary: Delete a vote by vote ID.
+      parameters: 
+        - name: vote_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful deletion.
+
+  /favourites:
+    get:
+      summary: Get a favourites list.
+      responses:
+        200:
+          description: A favourites list.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Favourite'
+    post:
+      summary: Make an image favourite.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Post-Favourite-Request'
+      responses:
+        200:
+          description: Successful favourite posting.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post-Favourite-Response'
+
+  /favourites/{favourite_id}:
+    delete:
+      summary: Remove a favourite by favourite ID.
+      parameters: 
+        - name: favourite_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful deletion.
