@@ -1,0 +1,37 @@
+Positive Test Case - Searching for a Product and Adding it to the Cart:
+
+-----=====###############=====-----
+
+CSS:
+
+1. Navigating to the Main Page: https://rozetka.com.ua/
+2. Finding input[placeholder="Я шукаю..."] locator and performing a click on it
+3. Entering "Dyson HD07"
+4. Finding button[type="submit"] locator and performing a click on it
+5. Waiting for results page to render
+6. Finding a.tile-title array and iterating them, until we find title (and copy it), which would be having "Dyson HD07" and performing a click on it
+7. Waiting for product page to render
+8. Finding h1.title__font locator and comparing it's title from Step 6 against the text from h1.title__font
+9. Finding span.buy-button__label locator and performing a click on it
+10. Ensuring the cart is automatically open by finding rz-modal locator
+11. Finding rz-cart-purchases span.cart-product__title locator comparing it's title from Step 6
+12. Finding rz-modal-close-btn locator and performing a click on it
+13. Finding button[aria-label="Відкрити корзину"] div.badge and ensuring the text for this element is "1"
+
+-----=====###############=====-----
+
+xPath:
+
+1. Navigating to the Main Page: https://rozetka.com.ua/
+2. Finding //input[@placeholder="Я шукаю..."] locator and performing a click on it
+3. Entering "Dyson HD07"
+4. Finding //button[@type="submit"] locator and performing a click on it
+5. Waiting for results page to render
+6. Finding //a[@class='tile-title black-link text-base'] array and iterating them, until we find title (and copy it), which would be having "Dyson HD07" and performing a click on it
+7. Waiting for product page to render
+8. Finding //h1[@class="title__font"] locator and comparing it's title from Step 6 against the text from //h1[@class="title__font"]
+9. Finding //span[text()=" Купити "] locator and performing a click on it
+10. Ensuring the cart is automatically open by finding //rz-modal locator
+11. Finding //rz-cart-purchases//span[@class="cart-product__title"] locator comparing it's title from Step 6
+12. Finding //rz-modal-close-btn locator and performing a click on it
+13. Finding //button[@aria-label="Відкрити корзину"]//div[contains(@class, "badge")] and ensuring the text for this element is "1"
