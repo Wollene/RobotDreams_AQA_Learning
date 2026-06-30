@@ -9,10 +9,10 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 
 ## Progress
 
-**Current:** 46% — 13 of 28 lessons completed
+**Current:** 50% — 14 of 28 lessons completed
 
 ```
-██████░░░░░░░  13/28
+██████▒░░░░░░  14/28
 ```
 
 | # | Topic | Status |
@@ -30,7 +30,7 @@ This repository contains homework submissions for the [QA Automation: TypeScript
 | 11 | Mocking and Testing Isolated Components | ✅ Done |
 | 12 | API Testing Basics | ✅ Done |
 | 13 | Integration and Contract Testing | ✅ Done |
-| 14 | Workshop: Creating Your Own Framework for API Testing | ⬜ Upcoming |
+| 14 | Workshop: Creating Your Own Framework for API Testing | ✅ Done |
 | 15 | UI Testing Basics | ⬜ Upcoming |
 | 16 | Cypress and Puppeteer | ⬜ Upcoming |
 | 17 | Selenium WebDriver and WebDriverIO | ⬜ Upcoming |
@@ -67,5 +67,6 @@ This repository contains homework submissions for the [QA Automation: TypeScript
     ├── Task 10. Test Frameworks. Writing Unit Tests
     ├── Task 11. Mocking and Testing Isolated Components
     ├── Task 12. API Testing Basics
-    └── Task 13. Integration and Contract Testing
+    ├── Task 13. Integration and Contract Testing
+    └── Task 14. Creating Your Own Framework for API Testing
 ```
